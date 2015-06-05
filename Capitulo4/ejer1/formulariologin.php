@@ -21,3 +21,34 @@ No eres usuario todavia? PULSA <a href="formularioaltausuario.php">AQUI</a>
 </body>
 
 </html>
+
+<?php
+
+echo "<br/><br/>Link que te Pueden Interezar :)";
+$conexion = new PDO('sqlite:favoritos.db');
+
+$consulta = "SELECT * FROM favoritos  ORDER BY RANDOM () LIMIT 3;";
+
+$resultado = $conexion->query($consulta);
+ echo "
+<table border=1 width=40%>
+<tr>
+<td>Titulo</td>
+<td>Direccion</td>
+<td>Categoria</td>
+<td>Comentario</td>
+<td>valoracion</td>
+<td></td>
+<td></td>
+</tr>
+";
+
+foreach ( $resultado as $fila )
+ {
+ 	echo  "<tr><td>".$fila['titulo']."</td><td>".$fila['direccion']."</td><td>".$fila['categoria']."</td><td>".$fila['comentario']."</td><td>".$fila['valoracion']."</td></tr>";
+ }
+echo "</table>";
+
+ $conexion = NULL;
+
+?>

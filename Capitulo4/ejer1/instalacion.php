@@ -82,7 +82,8 @@ $conexion = new PDO('sqlite:favoritos.db') or die ('Ha sido imposible establecer
 
 $consulta =
 
-"INSERT INTO logs VALUES ('00','2011','02','07','21','03','34','127.0.0.1','chrome','Lore','151212');
+"INSERT INTO logs VALUES ('00','2011','09','07','21','07','34','127.0.0.1','chrome','Fabis','246');
+INSERT INTO logs VALUES ('00','2011','09','07','21','07','34','127.0.0.1','chrome','Peter','0000');
 ";
 $resultado = $conexion -> exec($consulta);
 $conexion = NULL;

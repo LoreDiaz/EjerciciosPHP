@@ -3,6 +3,8 @@
 session_start();
 echo "Tu usuario es :..".$_SESSION['usuario']."<br/> Tu contrasena es:..".$_SESSION['contraseña'];
 
+echo "<br/><br/><a href='unlog.php'>CERRAR SESION<a/><br/><br/>";
+
 $conexion = new PDO('sqlite:favoritos.db');
 
 $consulta = "SELECT * FROM favoritos WHERE usuario='".$_SESSION['usuario']."' AND contraseña='".$_SESSION['contraseña']."';";
